@@ -1,33 +1,17 @@
-// L'UTENTE INSERISCE UNA PAROLA
-
 let userWord = prompt("Inserisci una parola...");
 
-// ---- FUNZIONI -----
+let reverseWord = [];
 
-// CREO UNA FUNZIONE PER VERIFICARE SE LA PAROLA DELL'UTENTE È PALINDROMA
+for (let i = userWord.length - 1; i >= 0; i--) {
 
-function validatePalindrome (palindromeWord) {
+    reverseWord += userWord[i];
+    
+}
 
-    // CREO UNA VARIABILE CHE MI TENGA CONTO DELLA LUNGHEZZA DELLA PAROLA
+console.log(reverseWord);
 
-    const word = (userWord.length);
-
-    // APRO UN CICLO CHE MI SPEZZA LA PAROLA IN DUE 
-
-    for (let i = 0; i < word / 2; i++) {
-
-        // SE LE DUE METÀ CORRISPONDONO LA PAROLA È PALINDROMA
-
-        if (userWord[i] !== userWord[word -1 -i]) {
-
-            alert("Non è una parola palindroma");
-
-        } else {
-
-            alert("È una parola palindroma");
-
-        };
-    };
+if (userWord == reverseWord) {
+    alert("La parola è palindroma");
+} else {
+    alert("La parola non è palindroma");
 };
-
-const value = validatePalindrome(userWord);
